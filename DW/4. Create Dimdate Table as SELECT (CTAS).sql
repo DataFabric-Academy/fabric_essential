@@ -1,3 +1,6 @@
+IF EXISTS (SELECT * FROM sys.tables WHERE name='DimDate')
+    DROP TABLE dw.DimDate;
+
 CREATE TABLE dw.DimDate
 AS
 select [DateKey],
