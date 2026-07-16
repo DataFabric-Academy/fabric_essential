@@ -3,12 +3,12 @@
 
 CREATE TABLE dw.DimCustomer
 (
-	CustomerKey bigint NOT NULL,
-	CustomerName varchar(8000) NOT NULL,
-	MaritalStatus varchar(8000)  NULL,
-	Gender varchar(8000) NULL,
-	City varchar(8000) NULL,
-	Province varchar(8000) NULL,
-	Country varchar(8000) NULL
+	CustomerKey int NOT NULL,
+	CustomerName nvarchar(200) NOT NULL,
+	MaritalStatus nvarchar(1)  NULL,
+	Gender nvarchar(1) NULL,
+	City nvarchar(30) NULL,
+	Province nvarchar(50) NULL,
+	Country nvarchar(50) NULL
 )
 GO
