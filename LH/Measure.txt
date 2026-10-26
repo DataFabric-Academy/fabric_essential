@@ -1,0 +1,21 @@
+Revenue = SUM(FactResellerSales[SalesAmount])
+
+Cost = SUM(FactResellerSales[TotalProductCost])
+
+Profit = [Revenue]-[Cost]
+
+Margin = [Profit]/[Revenue]
+
+Total Orders = SUM(FactResellerSales[OrderQuantity])
+
+Previous Year Revenue =
+	CALCULATE
+	(
+		[Revenue]
+	,	SAMEPERIODLASTYEAR('DimDate'[FullDateAlternateKey])
+	)
+
+-- หมายเหตุสำหรับ Posttest:
+-- 1) ชื่อตาราง fact ใน model ของคุณอาจเป็น FactResellerSales ตาม Workshop 15 — ปรับให้ตรงชื่อจริงใน model
+-- 2) Previous Year Revenue ต้อง Mark as date table ให้ DimDate เรียบร้อยก่อน (ดู Workshop 16)
+-- 3) โจทย์เพิ่ม "หน้าห้อง" ให้ผู้สอนประกาศช่วงสอบ — เขียนเพิ่มได้ที่ใต้บรรทัดนี้
