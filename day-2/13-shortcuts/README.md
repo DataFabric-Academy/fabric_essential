@@ -8,7 +8,7 @@
 
 **Shortcut คือหัวใจของแนวคิด OneLake** — มันคือตัวชี้ (pointer) ไม่ใช่ข้อมูล คุณสร้าง shortcut ที่ Lakehouse ของคุณชี้ไปตารางของ Warehouse อีกตัว แล้วข้อมูลนั้นจะโผล่ใน Lakehouse ของคุณเหมือนอยู่ตรงนั้นจริง แต่ด้านหลังไม่มีการคัดลอกแม้แต่ byte เดียว ทุกคิวรี่วิ่งไปอ่านที่ต้นทางเสมอ ต้นทางอัปเดตปุ๊บ คุณเห็นของใหม่ปั๊บ
 
-Shortcut สร้างได้สองทิศ: **ต้นทางภายใน** (Internal — ข้อมูลใน OneLake เอง เช่น ตาราง Warehouse อีกตัว) และ **ต้นทางภายนอก** (External — ADLS Gen2, S3, Azure Blob และอื่น ๆ) แล็บนี้เราทำทิศแรก: Lakehouse `AdventureworksLH` จะ "ยืม" `dw.DimDate` และ `dw.DimProduct` จาก Warehouse `AdventureworksDW` ของคุณเอง — ผลลัพธ์คือ Lakehouse หนึ่งตัวที่มีทั้งข้อมูลของโลก Spark และข้อมูลของโลก SQL อยู่ใน Tables เดียวกัน
+Shortcut สร้างได้สองทิศ: **ต้นทางภายใน** (Internal — ข้อมูลใน OneLake เอง เช่น ตาราง Warehouse อีกตัว) และ **ต้นทางภายนอก** (External — ADLS Gen2, S3, Azure Blob และอื่น ๆ) แล็บนี้เราทำทิศแรก: Lakehouse `AdventureworksLH` จะ "ยืม" `dw.DimDate` และ `dw.DimProduct` จาก Warehouse `AdventureworksDW` ของคุณเอง — ผลลัพธ์คือ Lakehouse หนึ่งตัวที่มีทั้งข้อมูลของโลก Spark และข้อมูลของโลก SQL อยู่ใน Tables เดียวกัน ส่วนทิศที่สอง — **External sources** (Storage Account จริงนอก OneLake ที่ใช้ข้อมูลสาธารณะแบบไม่ต้องมี credential) — ทำใน [LAB-EXTERNAL.md](LAB-EXTERNAL.md)
 
 กฎที่ต้องจำสองข้อ: ข้อมูลผ่าน shortcut เป็น**อ่านอย่างเดียว**ที่ฝั่งผู้ชี้ (เขียนต้องกลับไปที่ต้นทาง) และ storage ของคุณ**ไม่โต**ขึ้นเวลาสร้าง shortcut — ถ้าโต แปลว่าคุณทำผิดปุ่ม
 
@@ -26,7 +26,7 @@ Shortcut สร้างได้สองทิศ: **ต้นทางภา�
 
 ## ลงมือทำตามลำดับ
 
-ตาม [LAB.md](LAB.md) — แล็บเสริมนอกห้อง: [`Shortcuts/README.md`](../../Shortcuts/README.md)
+ตาม [LAB.md](LAB.md) — แล็บแทรกในห้อง (แหล่งภายนอก): [LAB-EXTERNAL.md](LAB-EXTERNAL.md) — แล็บเสริมนอกห้อง: [`Shortcuts/README.md`](../../Shortcuts/README.md)
 
 ## Common pitfalls / กับดัก
 

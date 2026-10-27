@@ -63,6 +63,9 @@
 | Shortcuts | day-2/13 | [OneLake shortcuts](https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts) · [Shortcuts in lakehouse](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-shortcuts) · [Create same-tenant shortcut](https://learn.microsoft.com/en-us/fabric/onelake/shortcuts/create-onelake-shortcut) |
 | OneLake security (ของใหม่ — GA พ.ค. 2026) | day-2/13 (บรรยาย) | [What's new in OneLake (FabCon 2026)](https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/fabcon-and-sqlcon-2026-what%E2%80%99s-new-in-microsoft-onelake/5172235) |
 | NYC Taxi dataset (demo) | day-2/16 | [NYC Yellow Taxi dataset](https://learn.microsoft.com/en-us/azure/open-datasets/dataset-taxi-yellow) |
+| Blob shortcut + **Anonymous** auth | day-2/13 (แล็บ 14B) | [Create an Azure Blob Storage shortcut](https://learn.microsoft.com/en-us/fabric/onelake/shortcuts/create-blob-shortcut) |
+| Shortcut transformations (ของใหม่ — GA: CSV/Parquet/JSON, preview: Excel) | day-2/13 (แล็บ 14B) | [Shortcut transformations](https://learn.microsoft.com/en-us/fabric/onelake/shortcuts/transformations) |
+| Azure Open Datasets — NYC green taxi (ต้นทางสาธารณะของแล็บ 14B) | day-2/13 (แล็บ 14B) | [NYC Green Taxi dataset](https://learn.microsoft.com/en-us/azure/open-datasets/dataset-taxi-green) |
 
 ## Permission, License และ AI
 

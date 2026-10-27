@@ -37,6 +37,8 @@
 - [ ] Workshop 12-1/12-2: upload CSV (จำชื่อไฟล์ `DimGeopraphy.csv` ตามจริง) + dataframe + Data Wrangler — ยืนยันว่าทุกคนสร้าง Lakehouse ด้วยตัวเลือก schema เดียวกัน
 - [ ] Workshop 13: `ETL DimReseller.ipynb` — ได้ manage/external สองตาราง
 - [ ] Workshop 14: shortcuts DimDate/DimProduct + ยืนยัน INSERT ผ่าน shortcut แดงจริง
+- [ ] Workshop 14B (แล็บแทรก): connection `azureopendatastorage` แบบ **Anonymous** → เลือก `nyctlc/green/puYear=2019/puMonth=1` → transformation → ยืนยัน path ยัง browse ได้จริงก่อนคาบ + จดจำนวนแถวจริง ([LAB-EXTERNAL.md](../day-2/13-shortcuts/LAB-EXTERNAL.md))
+- [ ] (ถ้าใช้ Stretch 14B) เผยแพร่ `dwdelta` container แบบ public แล้วทดสอบเปิด `_delta_log/00000000000000000000.json` แบบ anonymous ได้ ([publish-delta-source.md](publish-delta-source.md))
 - [ ] Workshop 15: `Get Reseller Sales` → `FactResellerSales` จดจำนวนแถว + ยอด SUM(SalesAmount)
 - [ ] Workshop 16: New semantic model จาก endpoint + relationship 3 เส้น — **ยืนยันผล Mark as date table บน tenant ปัจจุบัน** และบันทึกสาเหตุจริงที่เจอ (type? ค่าซ้ำ?) — อัปเดต `solutions/15-lh-semantic-model/SOLUTION.md` หลังซ้อม
 - [ ] Posttest: ทำจบหนึ่งชุดเป็นตัวอย่างเทียบ

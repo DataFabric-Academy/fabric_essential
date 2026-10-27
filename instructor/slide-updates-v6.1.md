@@ -62,3 +62,23 @@
 ## 5. หลักการหน้าจูงใจ: เด็คไม่ผูกเลขหน้า
 
 เอกสารประกอบทั้งชุด (repo) **ไม่อ้างเลขหน้าสไลด์** — อ้างด้วยชื่อหัวข้อ/item/ปุ่ม เพื่อให้เด็คแก้ไข-เรียงใหม่ได้อิสระ เมื่อแก้เด็ครอบหน้า: แก้ตามชื่อหัวข้อในไฟล์นี้ ไม่ต้องไล่ตามเลขหน้า
+
+## 6. สไลด์แทรกหลังสไลด์โมดูล Shortcut (Workshop 14): ทิศ External + ของใหม่ 2026
+
+เด็คเดิมคงไว้ทั้งหมด (แล็บ Warehouse shortcut ยังใช้อยู่) — แทรกเพิ่ม 3 หน้า **หลังสไลด์เดโม shortcut Internal ก่อนสไลด์สรุปโมดูล** เพื่อสอนแล็บแทรก [LAB-EXTERNAL.md](../day-2/13-shortcuts/LAB-EXTERNAL.md):
+
+1. **"Shortcut สองทิศ: Internal ↔ External"**
+   - Internal = ของใน OneLake เอง (Lakehouse, Warehouse, KQL ฯลฯ) — ใช้สิทธิ์ของผู้เรียก
+   - External = ADLS Gen2, Azure Blob Storage, S3, GCS, Dataverse, OneDrive/SharePoint — ใช้ connection ที่เก็บ credential ไว้
+   - จุดพีคสำหรับห้องเรียน: **Anonymous** เป็น auth kind ที่เลือกได้กับ Azure Blob Storage — ข้อมูลสาธารณะจึงทำแล็บได้โดยไม่ต้องมี Azure subscription
+   - อ้างอิง: [Create an Azure Blob Storage shortcut](https://learn.microsoft.com/en-us/fabric/onelake/shortcuts/create-blob-shortcut)
+
+2. **"แล็บ 14B — จาก Parquet สาธารณะสู่ Delta table"** (flow หน้าเดียว)
+   - `azureopendatastorage` (Azure Open Datasets — NYC Taxi, Parquet) → New table shortcut → Authentication **Anonymous** → โฟลเดอร์ `nyctlc/green/puYear=2019/puMonth=1` → Transform → Delta table ใน Tables
+   - จุดเชอร์: หน้า **Manage shortcut** แสดง Refresh history — Fabric sync ต้นทางทุก 2 นาที
+
+3. **"Pointer vs Auto-sync copy — อ่าน shortcut ให้เป็น"**
+   - Pure shortcut (W14): pointer ล้วน ไม่มีการ copy ไม่กิน storage
+   - Shortcut transformation (W14B, GA สำหรับ CSV/Parquet/JSON): Fabric Spark แปลงไฟล์เป็น managed Delta table และ sync ทุก 2 นาที — กิน storage จริง
+   - ต้นทางเป็น Delta อยู่แล้ว → ไม่มีขั้น Transform กลับเป็น pointer ล้วน (ตัวอย่างที่ผู้สอนเผยแพร่เอง: [`publish-delta-source.md`](publish-delta-source.md))
+   - อ้างอิง: [Shortcut transformations](https://learn.microsoft.com/en-us/fabric/onelake/shortcuts/transformations) · [Shortcuts in a lakehouse](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-shortcuts)
